@@ -210,7 +210,7 @@ module.exports = function(robot) {
 		}
 	}
 	if(!match){
-		string = "Apologies, sir, I couldn't find" + msg.match[1] + ".  I'm only programmed for the Void drop tables.";
+		string = "Apologies, sir, I couldn't find " + msg.match[1] + ".  I'm only programmed for the Void drop tables.";
 	}
 	
 	msg.send(string);
