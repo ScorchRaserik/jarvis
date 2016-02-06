@@ -59,15 +59,18 @@ var tables = {
 	t2sab:["WIP"],
 	t3sab:["WIP"],
 	t4sab:["WIP"],
-	t1surv:["WIP"],
-	t2surv:["WIP"],
-	t3surv:["WIP"],
-	t4surv:["WIP"],
+	t1srv:["WIP"],
+	t2srv:["WIP"],
+	t3srv:["WIP"],
+	t4srv:["WIP"],
 }
 
 module.exports = function(robot) {
   robot.respond(/what(?:')?s in (.*)/i, function(msg) {
-	if(!determineTower(msg.match[1])){
+	if(msg.match[1] = "t1s" || msg.match[1] = "t2s" || msg.match[1] = "t3s" || msg.match[1] = "t4s"){
+		string = "Which one, sir? Sabotage (t#sab) or Survival (t#srv)?"
+	}
+	else if(!determineTower(msg.match[1])){
 		string = "I couldn't find " + msg.match[1] + ", sir.  I'm afraid I'm only programmed for the Void drop tables."
     }
 	else{
@@ -96,7 +99,7 @@ module.exports = function(robot) {
 				string += item + " - " + key;
 				//if it's defense, interception, or survival, check rotation
 				if(key == "ods" || key == "odd"){
-					string += ", Rotation C\n";
+					string += ", rot C\n";
 				}
 				else if(key == "t1d" || key == "t2d" || key == "t3d" || key == "t4d" || key == "t1i" || key == "t1surv" || key == "t2surv" || key == "t3surv" || key == "t4surv"){
 					console.log("rotation found")
@@ -104,15 +107,15 @@ module.exports = function(robot) {
 					for(var j = i; j >= 0 && !rotationFound; j--){
 						var item = tables[key][j];
 						if(item == "Rotation C:"){
-							string += ", Rotation C\n";
+							string += ", rot C\n";
 							rotationFound = true;
 						}
 						else if(item == "Rotation B:"){
-							string += ", Rotation B\n";
+							string += ", rot B\n";
 							rotationFound = true;
 						}
 						else if(item == "Rotation A:"){
-							string += ", Rotation A\n";
+							string += ", rot A\n";
 							rotationFound = true;
 						}
 					}
