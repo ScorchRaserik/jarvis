@@ -28,6 +28,88 @@ function determineTower(input){
 		case "tower i capture":
 			output = "t1c";
 			break;
+		case "t2c":
+		case "tower 2 capture":
+		case "tower ii capture":
+			output = "t2c";
+			break;
+		case "t3c":
+		case "tower 3 capture":
+		case "tower iii capture":
+			output = "t3c";
+			break;
+		case "t4c":
+		case "tower 4 capture":
+		case "tower iv capture":
+			output = "t4c";
+			break;
+		case "t1d":
+			output = "t1d";
+			break;
+		case "t2d":
+			output = "t2d";
+			break;
+		case "t3d":
+			output = "t3d";
+			break;
+		case "t4d":
+			output = "t4d";
+			break;
+		case "t1e":
+			output = "t1e";
+			break;
+		case "t2e":
+			output = "t2e";
+			break;
+		case "t3e":
+			output = "t3e";
+			break;
+		case "t4e":
+			output = "t4e";
+			break;
+		case "t4i":
+			output = "t4i";
+			break;
+		case "t1md":
+			output = "t1md";
+			break;
+		case "t2md":
+			output = "t2md";
+			break;
+		case "t3md":
+			output = "t3md";
+			break;
+		case "t4md":
+			output = "t4md";
+			break;
+		case "t1sab":
+			output = "t1sab";
+			break;
+		case "t2sab":
+			output = "t2sab";
+			break;
+		case "t3sab":
+			output = "t3sab";
+			break;
+		case "t4sab":
+			output = "t4sab";
+			break;
+		case "t1srv":
+		case "t1surv":
+			output = "t1srv";
+			break;
+		case "t2srv":
+		case "t2surv":
+			output = "t2srv";
+			break;
+		case "t3srv":
+		case "t3surv":
+			output = "t3srv";
+			break;
+		case "t4srv":
+		case "t4surv":
+			output = "t4srv";
+			break;
 		default:
 			output = false;
 			break;
@@ -39,9 +121,9 @@ var tables = {
 	odd:["Rotation C:", "Trinity Prime Blueprint", "Dual Kamas Prime Handle", "Soma Prime Stock"],
 	ods:["Rotation C:", "Burston Prime Barrel", "Nova Prime Systems Blueprint", "Forma Blueprint"],
 	t1c:["Odonata Prime Blueprint", "Paris Prime Grip", "Forma Blueprint", "Ankyros Prime Gauntlet", "Lex Prime Receiver"],
-	t2c:["WIP"],
-	t3c:["WIP"],
-	t4c:["WIP"],
+	t2c:["Orthos Prime Handle", "Paris Prime String", "Forma Blueprint", "Orthos Prime Blade", "Volt Prime Blueprint", "Nyx Prime Blueprint", "Loki Prime Blueprint"],
+	t3c:["Bronco Prime Barrel", "Forma Blueprint", "Bronco Prime Receiver", "Dual Kamas Prime Blade", "Akbronco Prime Link", "Burston Prime Barrel", "Lex Prime Barrel"],
+	t4c:["Nyx Prime Systems", "Forma Blueprint", "Bronco Prime Receiver", "Volt Prime Blueprint", "Akbronco Prime Link"],
 	t1d:["WIP"],
 	t2d:["Rotation A:", "Soma Prime Blueprint", "Orthos Prime Blade", "Rotation B:", "Burston Prime Stock", "Paris Prime Blueprint", "Rotation C:", "Fang Prime Handle", "Braton Prime Stock", "Lex Prime Receiver", "Paris Prime Upper Limb", "Fang Prime Blueprint"],
 	t3d:["WIP"],
@@ -128,7 +210,7 @@ module.exports = function(robot) {
 		}
 	}
 	if(!match){
-		string = "Apologies, sir, this feature is currently a work in progress";
+		string = "Apologies, sir, I couldn't find" + msg.match[1] + ".  I'm only programmed for the Void drop tables.";
 	}
 	
 	msg.send(string);
