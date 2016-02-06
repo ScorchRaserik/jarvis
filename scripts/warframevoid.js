@@ -29,7 +29,7 @@ function determineTower(input){
 			output = "t1c";
 			break;
 		default:
-			output = "false";
+			output = false;
 			break;
 	}
 	return output;
