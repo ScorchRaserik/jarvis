@@ -43,7 +43,7 @@ var tables = {
 	t3c:["WIP"],
 	t4c:["WIP"],
 	t1d:["WIP"],
-	t2d:["WIP"],
+	t2d:["Rotation A:", "Soma Prime Blueprint", "Orthos Prime Blade", "Rotation B:", "Burston Prime Stock", "Paris Prime Blueprint", "Rotation C:", "Fang Prime Handle", "Braton Prime Stock", "Lex Prime Receiver", "Paris Prime Upper Limb", "Fang Prime Blueprint"],
 	t3d:["WIP"],
 	t4d:["WIP"],
 	t1e:["WIP"],
@@ -80,6 +80,54 @@ module.exports = function(robot) {
   });
   
   robot.respond(/where is (.*)/i, function(msg) {
-	msg.send("Apologies, sir, this feature is currently a work in progress");
+	var match = false;
+	var string = "As of U18.4.8:\n";
+	for(var key in tables){
+		// skip loop if the property is from prototype
+		if (!tables.hasOwnProperty(key)) continue;
+		
+		for(var i = 0; i < tables[key].length; i++){
+			var item = tables[key][i];
+			var result = item.match(new RegExp(msg.match[1], "i"));
+			
+			//if there's a match, print
+			if(result){
+				match = true;
+				string += item + " - " + key;
+				//if it's defense, interception, or survival, check rotation
+				if(key == "ods" || key == "odd"){
+					string += ", Rotation C\n";
+				}
+				else if(key == "t1d" || key == "t2d" || key == "t3d" || key == "t4d" || key == "t1i" || key == "t1surv" || key == "t2surv" || key == "t3surv" || key == "t4surv"){
+					console.log("rotation found")
+					var rotationFound = false;
+					for(var j = i; j >= 0 && !rotationFound; j--){
+						var item = tables[key][j];
+						if(item == "Rotation C:"){
+							string += ", Rotation C\n";
+							rotationFound = true;
+						}
+						else if(item == "Rotation B:"){
+							string += ", Rotation B\n";
+							rotationFound = true;
+						}
+						else if(item == "Rotation A:"){
+							string += ", Rotation A\n";
+							rotationFound = true;
+						}
+					}
+				}
+				//if not, just end line
+				else{
+					string += "\n";
+				}
+			}
+		}
+	}
+	if(!match){
+		string = "Apologies, sir, this feature is currently a work in progress";
+	}
+	
+	msg.send(string);
   });
 };
