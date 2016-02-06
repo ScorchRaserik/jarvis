@@ -67,7 +67,7 @@ var tables = {
 
 module.exports = function(robot) {
   robot.respond(/what(?:')?s in (.*)/i, function(msg) {
-	if(msg.match[1] = "t1s" || msg.match[1] = "t2s" || msg.match[1] = "t3s" || msg.match[1] = "t4s"){
+	if(msg.match[1] == "t1s" || msg.match[1] == "t2s" || msg.match[1] == "t3s" || msg.match[1] == "t4s"){
 		string = "Which one, sir? Sabotage (t#sab) or Survival (t#srv)?"
 	}
 	else if(!determineTower(msg.match[1])){
