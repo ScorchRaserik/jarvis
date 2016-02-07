@@ -183,7 +183,7 @@ module.exports = function(robot) {
 				if(key == "ods" || key == "odd"){
 					string += ", rot C\n";
 				}
-				else if(key == "t1d" || key == "t2d" || key == "t3d" || key == "t4d" || key == "t1i" || key == "t1surv" || key == "t2surv" || key == "t3surv" || key == "t4surv"){
+				else if(key == "t1d" || key == "t2d" || key == "t3d" || key == "t4d" || key == "t4i" || key == "t1srv" || key == "t2srv" || key == "t3srv" || key == "t4srv"){
 					console.log("rotation found")
 					var rotationFound = false;
 					for(var j = i; j >= 0 && !rotationFound; j--){
