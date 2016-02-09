@@ -8,8 +8,9 @@
 //   None
 //
 // Commands:
-//   hubot where is <item>
-//   hubot what's in <mission>
+//   hubot where is <item> - Tells where void and archwing items are
+//   hubot what's in <mission> - Tells where void items are
+//   hubot what's in archwing <planet/mission> - Tells where archwing missions are
 
 function determineTower(input){
 	switch(input.toLowerCase()){
@@ -96,19 +97,74 @@ function determineTower(input){
 			break;
 		case "t1srv":
 		case "t1surv":
+		case "t1sur":
 			output = "t1srv";
 			break;
 		case "t2srv":
 		case "t2surv":
+		case "t2sur":
 			output = "t2srv";
 			break;
 		case "t3srv":
 		case "t3surv":
+		case "t3sur":
 			output = "t3srv";
 			break;
 		case "t4srv":
 		case "t4surv":
+		case "t4sur":
 			output = "t4srv";
+			break;
+		case "archwing mercury":
+		case "archwing caduceus":
+		case "archwing mercury caduceus":
+		case "archwing mercury, caduceus":
+			output = "mercury";
+			break;
+		case "archwing venus":
+		case "archwing montes":
+		case "archwing venus montes":
+		case "archwing venus, montes":
+			output = "venus";
+			break;
+		case "archwing earth":
+		case "archwing erpo":
+		case "archwing earth erpo":
+		case "archwing earth, erpo":
+			output = "earth";
+			break;
+		case "archwing mars":
+		case "archwing syrtis":
+		case "archwing mars syrtis":
+		case "archwing mars, syrtis":
+			output = "mars";
+			break;
+		case "archwing saturn":
+		case "archwing pandora":
+		case "archwing saturn pandora":
+		case "archwing saturn, pandora":
+			output = "saturn";
+			break;
+		case "archwing jupiter":
+		case "archwing galilea":
+		case "archwing jupiter galilea":
+		case "archwing jupiter, galilea":
+			output = "jupiter";
+			break;
+		case "archwing uranus":
+		case "archwing caelus":
+		case "archwing uranus caelus":
+		case "archwing uranus, caelus":
+			output = "uranus";
+			break;
+		case "archwing neptune":
+		case "archwing salacia":
+		case "archwing neptune salacia":
+		case "archwing neptune, salacia":
+			output = "neptune";
+			break;
+		case "archwing eris":
+			output = "eris";
 			break;
 		default:
 			output = false;
@@ -145,15 +201,25 @@ var tables = {
 	t2srv:["Rotation A:", "Akbronco Prime Blueprint", "Paris Prime Lower Limb", "Forma Blueprint", "Rotation B:", "Soma Prime Blueprint", "Fang Prime Blade", "Hikou Prime Blueprint", "Rotation C:", "Burston Prime Receiver", "Soma Prime Receiver", "Paris Prime Blueprint", "Ash Prime Chassis Blueprint", "Ankyros Prime Blade", "Bronco Prime Blueprint", "Trinity Prime Chassis Blueprint"],
 	t3srv:["Rotation A:", "Fang Prime Blueprint", "Fang Prime Blade", "Rotation B:", "Vectis Prime Barrel", "Lex Prime Barrel", "Volt Prime Helmet Blueprint", "Rotation C:", "Bo Prime Blueprint", "Carrier Prime Blueprint", "Volt Prime Chassis Blueprint", "Ash Prime Systems Blueprint", "Rhino Prime Chassis Blueprint", "Dual Kamas Prime Blueprint", "Nova Prime Chassis Blueprint", "Forma"],
 	t4srv:["Rotation A:", "Ash Prime Chassis Blueprint", "Bo Prime Ornament", "Rotation B:", "Ortos Prime Blueprint", "Boltor Prime Receiver", "Rhino Prime Chassis Blueprint", "Rotation C:", "Loki Prime Helmet Blueprint", "Braton Prime Blueprint", "Forma Blueprint", "Odonata Prime Wings Blueprint", "Vasto Prime Blueprint", "Loki Prime Chassis Blueprint"],
+	mercury: ["Mission type: Grineer Exterminate", "There are no archwing parts on that mission, sir"],
+	venus:["Mission type: Corpus Exterminate", "Phaedra Receiver", "Velocitus Receiver", "Velocitus Barrel", "Velocitus Stock"],
+	earth:["Mission type: Grineer Mobile Defense", "Dual Decurion Receiver", "Kaszas Handle", "Phaedra Barrel", "Velocitus Receiver", "Onorix Handle"],
+	mars:["Mission type: Corpus Mobile Defense", "Dual Decurion Receiver", "Kaszas Handle", "Phaedra Barrel", "Velocitus Receiver", "Onorix Handle"],
+	saturn:["Mission type: Grineer Exterminate", "There are no archwing parts on that mission, sir"],
+	jupiter:["Mission type: Corpus Sabotage", "Dual Decurion Barrel", "Rathbone Head", "Rathbone Handle", "Fluctus Barrel", "Centaur Aegis"],
+	uranus:["Mission type: Grineer Interception", "Elytron Harness", "Elytron Wings", "Elytron Systems", "Fluctus Stock", "Fluctus Limbs", "Centaur Blade", "Corvas Receiver"],
+	neptune:["Mission type: Corpus Defense", "Phaedra Stock", "Kaszas Blade", "Corvas Barrel", "Corvas Stock", "Onorix Blade", "Fluctus Barrel"],
+	eris:["Something Wicked..."]
 }
 
 module.exports = function(robot) {
   robot.respond(/what(?:')?s in (.*)/i, function(msg) {
-	if(msg.match[1] == "t1s" || msg.match[1] == "t2s" || msg.match[1] == "t3s" || msg.match[1] == "t4s"){
-		string = "Which one, sir? Sabotage (t#sab) or Survival (t#srv)?"
+	var sabsrv = new RegExp(/t[1-4]s/i);
+	if(sabsrv.test(msg.match[1])){
+		string = "Which one, sir? Sabotage (sab) or Survival (srv)?"
 	}
 	else if(!determineTower(msg.match[1])){
-		string = "I couldn't find " + msg.match[1] + ", sir.  I'm afraid I'm only programmed for the Void drop tables."
+		string = "I couldn't find " + msg.match[1] + ", sir."
     }
 	else{
 		string = "As of U18.4.8:\n";
@@ -183,8 +249,7 @@ module.exports = function(robot) {
 				if(key == "ods" || key == "odd"){
 					string += ", rot C\n";
 				}
-				else if(key == "t1d" || key == "t2d" || key == "t3d" || key == "t4d" || key == "t4i" || key == "t1srv" || key == "t2srv" || key == "t3srv" || key == "t4srv"){
-					console.log("rotation found")
+				else if(tables[key][0].substring(0, 8) == "Rotation"){
 					var rotationFound = false;
 					for(var j = i; j >= 0 && !rotationFound; j--){
 						var item = tables[key][j];
@@ -202,6 +267,15 @@ module.exports = function(robot) {
 						}
 					}
 				}
+				//if key is not tower (archwing)
+				else if(key.charAt(0) != 't'){
+					if(tables[key][0].substring(0, 13) == "Mission type:"){
+						string += ", archwing: " + tables[key][0].substring(14) + "\n";
+					}
+					else{
+						string += ", archwing: infestation assassination\n";
+					}
+				}
 				//if not, just end line
 				else{
 					string += "\n";
@@ -211,6 +285,9 @@ module.exports = function(robot) {
 	}
 	if(!match){
 		string = "Apologies, sir, I couldn't find " + msg.match[1] + ".  I'm only programmed for the Void drop tables.";
+	}
+	else{
+		string = string.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
 	}
 	
 	msg.send(string);
