@@ -34,5 +34,5 @@ module.exports = function(robot) {
 		if(msg.match[1].toLowerCase() == robot.name.toLowerCase()){
 			msg.send(responses[randomNum] + ', sir');
 		}
-	})
+	});
 }
