@@ -284,7 +284,7 @@ module.exports = function(robot) {
 		}
 	}
 	if(!match){
-		string = "Apologies, sir, I couldn't find " + msg.match[1] + ".  I'm only programmed for the Void drop tables.";
+		string = "Apologies, sir, I couldn't find " + msg.match[1] + ".  I can only find prime or archwing parts.";
 	}
 	else{
 		string = string.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
