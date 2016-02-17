@@ -214,7 +214,7 @@ var tables = {
 
 module.exports = function(robot) {
   robot.respond(/what(?:')?s in (.*)/i, function(msg) {
-	var sabsrv = new RegExp(/t[1-4]s/i);
+	var sabsrv = new RegExp(/t[1-4]s$/i);
 	if(sabsrv.test(msg.match[1])){
 		string = "Which one, sir? Sabotage (sab) or Survival (srv)?"
 	}
