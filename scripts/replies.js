@@ -35,4 +35,14 @@ module.exports = function(robot) {
 			msg.send(responses[randomNum] + ', sir');
 		}
 	});
+	
+	robot.hear(/(?:congrats|congratz|grats|gratz|congratulations)(?:,)? (......)/i, function(msg){
+		if(msg.match[1].toLowerCase() == robot.name.toLowerCase()){
+			msg.send("Thank you, sir, it's an honor");
+		}
+	});
+	
+	robot.respond(/(?:congrats|congratz|grats|gratz|congratulations)(?:!|\.)/i, function(msg){
+		msg.send("Thank you, sir, it's an honor");
+	});
 }
