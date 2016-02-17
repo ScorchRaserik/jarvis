@@ -222,7 +222,7 @@ module.exports = function(robot) {
 		string = "I couldn't find " + msg.match[1] + ", sir."
     }
 	else{
-		string = "As of U18.4.8:\n";
+		string = "As of U18.4.12:\n";
 		for(var i = 0; i < tables[determineTower(msg.match[1])].length; i++){
 			string += tables[determineTower(msg.match[1])][i] + "\n";
 		}
@@ -232,7 +232,7 @@ module.exports = function(robot) {
   
   robot.respond(/where is (.*)/i, function(msg) {
 	var match = false;
-	var string = "As of U18.4.8:\n";
+	var string = "As of U18.4.12:\n";
 	for(var key in tables){
 		// skip loop if the property is from prototype
 		if (!tables.hasOwnProperty(key)) continue;
