@@ -13,9 +13,7 @@
     "hubot-redis-brain": "0.0.3",
     "hubot-rss-alerts": "0.0.1",
     "hubot-scripts": "^2.16.2",
-    "hubot-xkcd": "0.0.3"
-  },
-  "engines": {
-    "node": "0.12.7"
+    "hubot-xkcd": "0.0.3",
+    "xmlhttprequest": "^1.8.0"
   }
 }
