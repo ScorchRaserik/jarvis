@@ -21,8 +21,9 @@ module.exports = function(robot) {
 		  if (x.readyState == 4 && x.status == 200)
 		  {
 			var doc = x.responseText;
-			link = (doc.split("<link>")[2].split("</link>")[0] + "\n\n");
-			text = (doc.split("<description>")[2].split("</description>")[0]);
+			link = doc.split("<link>")[2].split("</link>")[0] + "\n\n";
+			text = doc.split("<description>")[2].split("</description>")[0];
+			text = text.replace(/\n{2,}/g, "\n");
 			text = text.replace(/\<\!\[CDATA\[/g, "");
 			text = text.replace(/\]\]\>/g, "");
 			text = text.replace(/\<p\>/g, "");
@@ -32,10 +33,13 @@ module.exports = function(robot) {
 			text = text.replace(/\<li\>/g, "");
 			text = text.replace(/\<\/li\>/g, "");
 			text = text.replace(/\<strong\>/g, "**");
-			text = text.replace(/\<\/strong\>/g, "**");
+			text = text.replace(/\<\/strong\>/g, "**  ");
 			text = text.replace(/\&gt\;/g, ">");
 			text = text.replace(/\&lt\;/g, "<");
-			text = text.replace(/\&amp\;/g, "&")
+			text = text.replace(/\&amp\;/g, "&");
+			text = text.replace(/\s{2,}/g, "\n * ");
+			text = text.replace(/\s\*\s\*\*/g, "\n**")
+			text = text.slice(0, -3);
 			msg.send(link + text);
 		  }
 		};

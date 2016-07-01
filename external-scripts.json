@@ -2,6 +2,5 @@
   "hubot-help",
   "hubot-heroku-keepalive",
   "hubot-redis-brain",
-  "hubot-xkcd",
-  "hubot-rss-alerts"
+  "hubot-xkcd"
 ]
