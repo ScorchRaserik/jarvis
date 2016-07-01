@@ -21,7 +21,7 @@ module.exports = function(robot) {
 		  if (x.readyState == 4 && x.status == 200)
 		  {
 			var doc = x.responseText;
-			link = doc.split("<link>")[2].split("</link>")[0] + "\n\n";
+			link = doc.split("<link>")[2].split("</link>")[0] + "\n";
 			text = doc.split("<description>")[2].split("</description>")[0];
 			text = text.replace(/\n{2,}/g, "\n");
 			text = text.replace(/\<\!\[CDATA\[/g, "");
