@@ -136,6 +136,18 @@ module.exports = function(robot) {
 							string += ", *common\n";
 							rotationFound = true;
 						}
+                        else if(item =="*Rotation A*"){
+                            string += ", *rotation A (first two waves)\n";
+							rotationFound = true;
+                        }
+                        else if(item =="*Rotation B*"){
+                            string += ", *rotation B (every third out of four waves)\n";
+							rotationFound = true;
+                        }
+                        else if(item =="*Rotation C*"){
+                            string += ", *rotation C (every fourth wave)\n";
+							rotationFound = true;
+                        }
 					}
 				}
 				//add check for mission type for relic locations
