@@ -12,8 +12,9 @@
 //   hubot what's in <mission> - Tells where void items are
 //   hubot what's in archwing <planet/mission> - Tells where archwing missions are
 
-function determineTower(input){
+function determineInput(input){
 	switch(input.toLowerCase()){
+        //Relic Locations
 		case "odd":
 		case "orokin derelict defense":
 		case "derelict defense":
@@ -24,147 +25,47 @@ function determineTower(input){
 		case "derelict survival":
 			output = "ods";
 			break;
-		case "t1c":
-		case "tower 1 capture":
-		case "tower i capture":
-			output = "t1c";
+        case "earth cervantes":
+        case "earth, cervantes":
+        case "cervantes":
+            output = "earthcerv";
+            break;
+            
+        //Relic Contents
+		case "lith a1":
+		case "la1":
+			output = "la1";
 			break;
-		case "t2c":
-		case "tower 2 capture":
-		case "tower ii capture":
-			output = "t2c";
+        case "lith f1":
+        case "lf1":
+            output = "lf1";
+            break;
+        
+        //Archwing
+		case "steel meridian":
+		case "sm":
+			output = "sm";
 			break;
-		case "t3c":
-		case "tower 3 capture":
-		case "tower iii capture":
-			output = "t3c";
+		case "arbiters of hexis":
+		case "aoh":
+			output = "aoh";
 			break;
-		case "t4c":
-		case "tower 4 capture":
-		case "tower iv capture":
-			output = "t4c";
+		case "cephalon suda":
+		case "cs":
+		case "teflon soda":
+			output = "cd";
 			break;
-		case "t1d":
-			output = "t1d";
+		case "perrin sequence":
+		case "ps":
+			output = "ps";
 			break;
-		case "t2d":
-			output = "t2d";
+		case "red veil":
+		case "rv":
+			output = "rv";
 			break;
-		case "t3d":
-			output = "t3d";
-			break;
-		case "t4d":
-			output = "t4d";
-			break;
-		case "t1e":
-			output = "t1e";
-			break;
-		case "t2e":
-			output = "t2e";
-			break;
-		case "t3e":
-			output = "t3e";
-			break;
-		case "t4e":
-			output = "t4e";
-			break;
-		case "t4i":
-			output = "t4i";
-			break;
-		case "t1md":
-			output = "t1md";
-			break;
-		case "t2md":
-			output = "t2md";
-			break;
-		case "t3md":
-			output = "t3md";
-			break;
-		case "t4md":
-			output = "t4md";
-			break;
-		case "t1sab":
-			output = "t1sab";
-			break;
-		case "t2sab":
-			output = "t2sab";
-			break;
-		case "t3sab":
-			output = "t3sab";
-			break;
-		case "t4sab":
-			output = "t4sab";
-			break;
-		case "t1srv":
-		case "t1surv":
-		case "t1sur":
-			output = "t1srv";
-			break;
-		case "t2srv":
-		case "t2surv":
-		case "t2sur":
-			output = "t2srv";
-			break;
-		case "t3srv":
-		case "t3surv":
-		case "t3sur":
-			output = "t3srv";
-			break;
-		case "t4srv":
-		case "t4surv":
-		case "t4sur":
-			output = "t4srv";
-			break;
-		case "archwing mercury":
-		case "archwing caduceus":
-		case "archwing mercury caduceus":
-		case "archwing mercury, caduceus":
-			output = "mercury";
-			break;
-		case "archwing venus":
-		case "archwing montes":
-		case "archwing venus montes":
-		case "archwing venus, montes":
-			output = "venus";
-			break;
-		case "archwing earth":
-		case "archwing erpo":
-		case "archwing earth erpo":
-		case "archwing earth, erpo":
-			output = "earth";
-			break;
-		case "archwing mars":
-		case "archwing syrtis":
-		case "archwing mars syrtis":
-		case "archwing mars, syrtis":
-			output = "mars";
-			break;
-		case "archwing saturn":
-		case "archwing pandora":
-		case "archwing saturn pandora":
-		case "archwing saturn, pandora":
-			output = "saturn";
-			break;
-		case "archwing jupiter":
-		case "archwing galilea":
-		case "archwing jupiter galilea":
-		case "archwing jupiter, galilea":
-			output = "jupiter";
-			break;
-		case "archwing uranus":
-		case "archwing caelus":
-		case "archwing uranus caelus":
-		case "archwing uranus, caelus":
-			output = "uranus";
-			break;
-		case "archwing neptune":
-		case "archwing salacia":
-		case "archwing neptune salacia":
-		case "archwing neptune, salacia":
-			output = "neptune";
-			break;
-		case "archwing eris":
-			output = "eris";
+		case "new loka":
+		case "nl":
+			output = "nl";
 			break;
 		default:
 			output = false;
@@ -174,57 +75,30 @@ function determineTower(input){
 }
 
 var tables = {
-	odd:["Rotation C:", "Trinity Prime Blueprint", "Dual Kamas Prime Handle", "Soma Prime Stock", "Forma Blueprint"],
-	ods:["Rotation C:", "Burston Prime Barrel", "Nova Prime Systems Blueprint", "Forma Blueprint"],
-	t1c:["Odonata Prime Blueprint", "Paris Prime Grip", "Forma Blueprint", "Paris Prime String", "Lex Prime Receiver"],
-	t2c:["Orthos Prime Handle", "Paris Prime String", "Forma Blueprint", "Orthos Prime Blade", "Volt Prime Blueprint", "Nyx Prime Blueprint", "Kavasa Prime Band"],
-	t3c:["Nikana Prime Hilt", "Forma Blueprint", "Spira Prime Pouch", "Dual Kamas Prime Blade", "Akbronco Prime Link", "Burston Prime Barrel", "Lex Prime Barrel"],
-	t4c:["Nyx Prime Systems", "Forma Blueprint", "Bronco Prime Receiver", "Volt Prime Blueprint", "Akbronco Prime Link"],
-	t1d:["Rotation C:", "Vasto Prime Receiver", "Carrier Prime Systems", "Forma Blueprint", "Hikou Prime Stars", "Scindo Prime Handle"],
-	t2d:["Rotation A:", "Soma Prime Blueprint", "Orthos Prime Blade", "Rotation B:", "Burston Prime Stock", "Paris Prime Blueprint", "Rotation C:", "Fang Prime Handle", "Braton Prime Stock", "Lex Prime Receiver", "Paris Prime Upper Limb", "Fang Prime Blueprint"],
-	t3d:["Rotation A:", "Trinity Prime Chassis Blueprint", "Rotation B:", "Lex Prime Blueprint", "Paris Prime String", "Burston Prime Blueprint", "Rotation C:", "Braton Prime Barrel", "Braton Prime Receiver", "Forma Blueprint", "Ash Prime Blueprint", "Braton Prime Stock", "Fragor Prime Handle", "Nyx Prime Blueprint"],
-	t4d:["Rotation A:", "Forma Blueprint", "Lex Prime Blueprint", "Orthos Prime Handle", "Vectis Prime Barrel", "Rotation B:", "Braton Prime Barrel", "Braton Prime Receiver", "Carrier Prime Systems", "Rotation C:", "Akstiletto Prime Blueprint", "Vauban Prime Chassis", "Trinity Prime Blueprint", "Odonata Prime Blueprint", "Carrier Prime Carapace", "Burston Prime Receiver", "Hikou Prime Pouch"],
-	t1e:["Scindo Prime Blueprint", "Fragor Prime Blueprint", "Forma Blueprint", "Burston Prime Stock"],
-	t2e:["Carrier Prime Cerebrum", "Volt Prime Helmet Blueprint", "Nova Prime Blueprint", "Forma Blueprint", "Saryn Prime Systems Blueprint", "Orthos Prime Blueprint"],
-	t3e:["Nyx Prime Chassis Blueprint", "Soma Prime Stock", "Vasto Prime Receiver", "Saryn Prime Blueprint", "Nikana Prime Blueprint", "Nyx Prime Systems Blueprint"],
-	t4e:["Kavasa Prime Collar Buckle", "Forma Blueprint", "Odonata Prime Harness Blueprint", "Hikou Prime Pouch", "Saryn Prime Blueprint", "Vectis Prime Receiver"],
-	t4i:["Rotation A:", "Carrier Prime blueprint", "Akbronco Prime Blueprint", "Kavasa Prime Collar", "Rotation B:", "Vectis Prime Barrel", "Hikou Prime Blueprint", "Forma Blueprint", "Rotation C:", "Akstiletto Prime Barrel", "Soma Prime Barrel", "Fang Prime Handle", "Lex Prime Receiver", "Paris Prime Grip", "Bronco Prime Barrel", "Forma Blueprint"],
-	t1md:["Saryn Prime Helmet Blueprint", "Vectis Prime Blueprint", "Braton Prime Barrel", "Forma Blueprint"],
-	t2md:["Burston Prime Blueprint", "Nyx Prime Helmet Blueprint", "Vasto Prime Blueprint", "Braton Prime Blueprint", "Vasto Prime Barrel", "Spira Prime Blueprint"],
-	t3md:["Vectis Prime Stock", "Trinity Prime Systems Blueprint", "Scindo Prime Blade", "Forma Blueprint", "Spira Prime Blade", "Soma Prime Barrel", "Burston Prime Receiver"],
-	t4md:["Carrier Prime Carapace", "Kavasa Prime Collar Blueprint", "Vasto Prime Receiver", "Forma Blueprint", "Spira Prime Blueprint"],
-	t1sab:["Scindo Prime Handle", "Odonata Prime Harness Blueprint", "Hikou Prime Stars", "Odonata Prime Systems Blueprint", "Nova Prime Blueprint", "Vasto Prime Barrel"],
-	t2sab:["Nyx Prime Helmet Blueprint", "Vauban Prime Helmet Blueprint", "Hikou Prime Blueprint", "Bronco Prime Blueprint", "Volt Prime Chassis Blueprint", "Hikou Prime Pouch", "Trinity Prime Helmet Blueprint"],
-	t3sab:["Vauban Prime Blueprint", "Forma Blueprint", "Scindo Prime Blade", "Nyx Prime Blueprint", "Bronco Prime Barrel", "Soma Prime Barrel", "Nova Prime Helmet", "Forma"],
-	t4sab:["Fragor Prime Head", "Nyx Prime Systems Blueprint", "Carrier Prime Systems", "Forma Blueprint", "Akstiletto Prime Receiver", "Kavasa Prime Collar Band", "Ash Prime Helmet Blueprint", "Nova Prime Helmet Blueprint"],
-	t1srv:["Rotation A:", "Burston Prime Barrel", "Odonata Prime Systems Blueprint", "Rotation B:", "*empty*", "Rotation C:", "Scindo Prime Handle", "Paris Prime Upper Limb", "Volt Prime Systems Blueprint", "Paris Prime Lower Limb", "Burston Prime Stock", "Nova Prime Helmet Bluerpint"],
-	t2srv:["Rotation A:", "Akbronco Prime Blueprint", "Paris Prime Lower Limb", "Forma Blueprint", "Rotation B:", "Soma Prime Blueprint", "Fang Prime Blade", "Hikou Prime Blueprint", "Rotation C:", "Burston Prime Receiver", "Soma Prime Receiver", "Paris Prime Blueprint", "Ash Prime Chassis Blueprint", "Nikana Prime Blade", "Bronco Prime Blueprint", "Trinity Prime Chassis Blueprint"],
-	t3srv:["Rotation A:", "Fang Prime Blueprint", "Fang Prime Blade", "Rotation B:", "Vectis Prime Barrel", "Lex Prime Barrel", "Volt Prime Helmet Blueprint", "Rotation C:", "Vauban Prime Systems Blueprint", "Carrier Prime Blueprint", "Lex Prime ", "Ash Prime Systems Blueprint", "Saryn Prime Chassis Blueprint", "Dual Kamas Prime Blueprint", "Nova Prime Chassis Blueprint", "Forma"],
-	t4srv:["Rotation A:", "Ash Prime Chassis Blueprint", "Dual Kamas Prime Blueprint", "Rotation B:", "Orthos Prime Blueprint", "Bronco Prime Receiver", "Lex Prime Barrel", "Rotation C:", "Ash Prime Helmet Blueprint", "Braton Prime Blueprint", "Forma Blueprint", "Odonata Prime Wings Blueprint", "Vasto Prime Blueprint", "Akstiletto Prime Link"],
-	mercury: ["Mission type: Grineer Exterminate", "There are no archwing parts on that mission, sir"],
-	venus:["Mission type: Corpus Exterminate", "Phaedra Receiver", "Velocitus Receiver", "Velocitus Barrel", "Velocitus Stock"],
-	earth:["Mission type: Grineer Mobile Defense", "Dual Decurion Receiver", "Kaszas Handle", "Phaedra Barrel", "Velocitus Receiver", "Onorix Handle"],
-	mars:["Mission type: Corpus Mobile Defense", "Dual Decurion Receiver", "Kaszas Handle", "Phaedra Barrel", "Velocitus Receiver", "Onorix Handle"],
-	saturn:["Mission type: Grineer Exterminate", "There are no archwing parts on that mission, sir"],
-	jupiter:["Mission type: Corpus Sabotage", "Dual Decurion Barrel", "Rathbone Head", "Rathbone Handle", "Fluctus Barrel", "Centaur Aegis"],
-	uranus:["Mission type: Grineer Interception", "Elytron Harness", "Elytron Wings", "Elytron Systems", "Fluctus Stock", "Fluctus Limbs", "Centaur Blade", "Corvas Receiver"],
-	neptune:["Mission type: Corpus Defense", "Phaedra Stock", "Kaszas Blade", "Corvas Barrel", "Corvas Stock", "Onorix Blade", "Fluctus Barrel"],
-	eris:["Something Wicked..."]
+    //Relic locations
+    //Orokin Derelicts need rotations, everything else does not
+	odd: ["*Rotation A*", "Lith F1 (LF1)"],
+	ods: ["*Rotation A*", "Lith A1 (LA1)", "Meso B1 (MB1)", "*Rotation B*", "Neo D1 (ND1)", "Neo V1 (NV1)", "*Rotation C*", "Axi A1 (AA1)", "Axi N2 (AN2)"],
+    earthcerv: ["Lith A1 (LA1)", "Lith F1 (LF1)", "Lith F2 (LF2)", "Lith M1 (LM1)", "Lith S1 (LS1)", "Lith S2 (LS2)", "Lith V1 (LV1)"],
+    
+    //Relic contents
+	la1: ["*Common*", "Braton Prime Barrel", "Vasto Prime Receiver", "*Uncommon*", "Saryn Prime Neuroptics", "Vectis Prime Blueprint", "*Rare*", "Akstiletto Prime Blueprint"],
+    lf1: ["*Common*", "*Uncommon*", "*Rare*",],
+	
+    //Archwing
+    sm: ["Kaszas Handle", "Velocitus Receiver", "Corvas Stock", "Agkuza Guard", "Fluctus Stock"],
+    aoh: ["Dual Decurion Barrel", "Phaedra Barrel", "Corvas Barrel", "Cyngas Barrel", "Centaur Aegis"],
 }
 
 module.exports = function(robot) {
   robot.respond(/what(?:')?s in (.*)/i, function(msg) {
-	var sabsrv = new RegExp(/t[1-4]s$/i);
-	if(sabsrv.test(msg.match[1])){
-		string = "Which one, sir? Sabotage (sab) or Survival (srv)?"
-	}
-	else if(!determineTower(msg.match[1])){
+	else if(!determineInput(msg.match[1])){
 		string = "I couldn't find " + msg.match[1] + ", sir."
     }
 	else{
-		string = "As of U18.4.12:\n";
-		for(var i = 0; i < tables[determineTower(msg.match[1])].length; i++){
-			string += tables[determineTower(msg.match[1])][i] + "\n";
+		string = "As of Update: Specters of the Rail - Hotfix 13:\n";
+		for(var i = 0; i < tables[determineInput(msg.match[1])].length; i++){
+			string += tables[determineInput(msg.match[1])][i] + "\n";
 		}
 	}
 	msg.send(string);
@@ -232,7 +106,7 @@ module.exports = function(robot) {
   
   robot.respond(/where is (.*)/i, function(msg) {
 	var match = false;
-	var string = "As of U18.4.12:\n";
+	var string = "As of Update: Specters of the Rail - Hotfix 13:\n";
 	for(var key in tables){
 		// skip loop if the property is from prototype
 		if (!tables.hasOwnProperty(key)) continue;
@@ -245,38 +119,28 @@ module.exports = function(robot) {
 			if(result){
 				match = true;
 				string += item + " - " + key;
-				//if it's defense, interception, or survival, check rotation
-				if(key == "ods" || key == "odd"){
-					string += ", rot C\n";
-				}
-				else if(tables[key][0].substring(0, 8) == "Rotation"){
+				//check rotation/rarity
+				if(tables[key][0].substring(0) == "*"){
 					var rotationFound = false;
 					for(var j = i; j >= 0 && !rotationFound; j--){
 						var item = tables[key][j];
-						if(item == "Rotation C:"){
-							string += ", rot C\n";
+						if(item == "*Rare*"){
+							string += ", *rare*\n";
 							rotationFound = true;
 						}
-						else if(item == "Rotation B:"){
-							string += ", rot B\n";
+						else if(item == "*uncommon*"){
+							string += ", *uncommon*\n";
 							rotationFound = true;
 						}
-						else if(item == "Rotation A:"){
-							string += ", rot A\n";
+						else if(item == "*common*"){
+							string += ", *common\n";
 							rotationFound = true;
 						}
 					}
 				}
-				//if key is not tower (archwing)
-				else if(key.charAt(0) != 't'){
-					if(tables[key][0].substring(0, 13) == "Mission type:"){
-						string += ", archwing: " + tables[key][0].substring(14) + "\n";
-					}
-					else{
-						string += ", archwing: infestation assassination\n";
-					}
-				}
-				//if not, just end line
+				//add check for mission type for relic locations
+				
+				//if no rotation, end line
 				else{
 					string += "\n";
 				}
