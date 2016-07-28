@@ -118,6 +118,7 @@ module.exports = function(robot) {
             if(result){
                 match = true;
                 //TODO: Translate syndicate keys (sm = Steel Meridian, aoh = Arbiters of Hexis, etc etc)
+                //TODO: Translate relic location mission names
                 
                 
                 string += item + " - " + key;
