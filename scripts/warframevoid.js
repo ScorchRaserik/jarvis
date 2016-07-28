@@ -123,32 +123,32 @@ module.exports = function(robot) {
                 
                 string += item + " - " + key;
                 //check rotation/rarity
-                if(tables[key][0].substring(0) == "*"){
+                if(tables[key][0].substring(0, 1) == "*"){
                     var rotationFound = false;
                     for(var j = i; j >= 0 && !rotationFound; j--){
                         var item = tables[key][j];
                         if(item == "*Rare*"){
-                            string += ", *rare*\n";
+                            string += ", *Rare*\n";
                             rotationFound = true;
                         }
-                        else if(item == "*uncommon*"){
+                        else if(item == "*Uncommon*"){
                             string += ", *uncommon*\n";
                             rotationFound = true;
                         }
-                        else if(item == "*common*"){
-                            string += ", *common\n";
+                        else if(item == "*Common*"){
+                            string += ", *common*\n";
                             rotationFound = true;
                         }
                         else if(item =="*Rotation A*"){
-                            string += ", *rotation A (first two waves)\n";
+                            string += ", *rotation A* (first two waves)\n";
                             rotationFound = true;
                         }
                         else if(item =="*Rotation B*"){
-                            string += ", *rotation B (every third out of four waves)\n";
+                            string += ", *rotation B* (every third out of four waves)\n";
                             rotationFound = true;
                         }
                         else if(item =="*Rotation C*"){
-                            string += ", *rotation C (every fourth wave)\n";
+                            string += ", *rotation C* (every fourth wave)\n";
                             rotationFound = true;
                         }
                     }
