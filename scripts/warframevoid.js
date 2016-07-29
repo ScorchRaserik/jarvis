@@ -40,7 +40,115 @@ function determineInput(input){
         case "lf1":
             output = "lf1";
             break;
-        
+        case "lith f2":
+        case "lf2":
+            output = "lf2";
+            break;
+        case "lith m1":
+        case "lm1":
+            output = "lm1";
+            break;
+        case "lith s1":
+        case "ls1":
+            output = "ls1";
+            break;
+        case "lith s2":
+        case "ls2":
+            output = "ls2";
+            break;
+        case "lith v1":
+        case "lv1":
+            output = "lv1";
+            break;
+        case "meso b1":
+        case "mb1":
+            output = "mb1";
+            break;
+        case "meso c1":
+        case "mc1":
+            output = "mc1";
+            break;
+        case "meso n1":
+        case "mn1":
+            output = "mn1";
+            break;
+        case "meso d1":
+        case "md1":
+            output = "md1";
+            break;
+        case "meso n2":
+        case "mn2":
+            output = "mn2";
+            break;
+        case "meso v1":
+        case "mv1":
+            output = "mv1";
+            break;
+        case "meso v2":
+        case "mv2":
+            output = "mv2";
+            break;
+        case "neo d1":
+        case "nd1":
+            output = "nd1";
+            break;
+        case "neo n1":
+        case "nn1":
+            output = "nn1";
+            break;
+        case "neo s1":
+        case "ns1":
+            output = "ns1";
+            break;
+        case "neo n2":
+        case "nn2":
+            output = "nn2";
+            break;
+        case "neo s2":
+        case "ns2":
+            output = "ns2";
+            break;
+        case "neo s3":
+        case "ns3":
+            output = "ns3";
+            break;
+        case "neo v1":
+        case "nv1":
+            output = "nv1";
+            break;
+        case "axi a1":
+        case "aa1":
+            output = "aa1";
+            break;
+        case "axi k1":
+        case "ak1":
+            output = "ak1";
+            break;
+        case "axi n1":
+        case "an1":
+            output = "an1";
+            break;
+        case "axi n2":
+        case "an2":
+            output = "an2";
+            break;
+        case "axi s1":
+        case "as1":
+            output = "as1";
+            break;
+        case "axi v1":
+        case "av1":
+            output = "av1";
+            break;
+        case "axi v2":
+        case "av2":
+            output = "av2";
+            break;
+        case "axi v3":
+        case "av3":
+            output = "av3";
+            break;
+            
         //Archwing
         case "steel meridian":
         case "sm":
