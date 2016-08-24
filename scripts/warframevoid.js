@@ -149,6 +149,52 @@ function determineInput(input){
             output = "av3";
             break;
             
+        //New relics, sort later?
+        case "axi n3":
+        case "an3":
+            output = "an3";
+            break;
+        case "neo n3":
+        case "nn3":
+            output = "nn3";
+            break;
+        case "meso f1":
+        case "mf1":
+            output = "mf1";
+            break;
+        case "lith n1":
+        case "ln1":
+            output = "ln1";
+            break;
+        case "axi g1":
+        case "ag1":
+            output = "ag1";
+            break;
+        case "axi t1":
+        case "at1":
+            output = "at1";
+            break;
+        case "neo v3":
+        case "nv3":
+            output = "nv3";
+            break;
+        case "meso s1":
+        case "ms1":
+            output = "ms1";
+            break;
+        case "lith k1":
+        case "lk1":
+            output = "lk1";
+            break;
+        case "neo v2":
+        case "nv2":
+            output = "nv2";
+            break;
+        case "meso s2":
+        case "ms2":
+            output = "ms2";
+            break;
+            
         //Archwing
         case "steel meridian":
         case "sm":
@@ -243,7 +289,7 @@ module.exports = function(robot) {
         string = "I couldn't find " + msg.match[1] + ", sir."
     }
     else{
-        string = "As of Update: Specters of the Rail - Hotfix 13:\n";
+        string = "As of The Silver Grove: Hotfix 3:\n";
         for(var i = 0; i < tables[determineInput(msg.match[1])].length; i++){
             string += tables[determineInput(msg.match[1])][i] + "\n";
         }
@@ -253,7 +299,7 @@ module.exports = function(robot) {
   
   robot.respond(/where is (.*)/i, function(msg) {
     var match = false;
-    var string = "As of Update: Specters of the Rail - Hotfix 13:\n";
+    var string = "As of The Silver Grove: Hotfix 3:\n";
     for(var key in tables){
         // skip loop if the property is from prototype
         if (!tables.hasOwnProperty(key)) continue;
@@ -309,7 +355,12 @@ module.exports = function(robot) {
         }
     }
     if(!match){
+      if(msg.match[1].toLowerCase() == "waldo" || msg.match[1].toLowerCase() == "waldo?"){
+        string = "I'm sorry, sir, I'm afriad I am sworn to secrecy regarding the wherabouts of one Mr. Waldo...";
+      }
+      else{
         string = "Apologies, sir, I couldn't find " + msg.match[1] + ".  I can only find prime or archwing parts.";
+      }
     }
     else{
         string = string.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
