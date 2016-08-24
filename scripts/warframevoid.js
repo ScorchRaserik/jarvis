@@ -266,17 +266,17 @@ var tables = {
     av3: ["*Common*", "Trinity Prime Systems", "Trinity Prime Neuroptics", "Vasto Prime Barrel", "*Uncommon*", "Braton Prime Receiver", "Orthos Prime Blueprint", "*Rare*", "Vectis Prime Stock"],
     
     //New relics, sort later?
-    an3: ["*Common*", "*Uncommon*","*Rare*", "Nekros Prime Blueprint"],
-    nn3: ["*Common*", "*Uncommon*","*Rare*", "Nekros Prime Systems"],
-    mf1: ["*Common*", "*Uncommon*", "Nekros Prime Neuroptics", "*Rare*", ],
-    ln1: ["*Common*", "Nekros Prime Chassis", "*Uncommon*", "*Rare*", ],
-    ag1: ["*Common*", "Nekros Prime Chassis", "*Uncommon*", "*Rare*", "Galatine Prime Blueprint"],
-    at1: ["*Common*", "*Uncommon*", "*Rare*", "Tigris Prime Blueprint"],
-    nv3: ["*Common*", "Galatine Prime Blade", "*Uncommon*", "Tigris Prime Receiver", "*Rare*", ],
-    ms1: ["*Common*", "Tigris Prime Stock", "*Uncommon*", "*Rare*", ],
-    lk1: ["*Common*", "*Uncommon*", "Tigris Prime Barrel", "*Rare*", ],
-    nv2: ["*Common*", "Galatine Prime Blade", "*Uncommon*", "Galatine Prime Handle", "*Rare*", ],
-    ms2: ["*Common*", "Galatine Prime Blade", "*Uncommon*", "*Rare*", ],
+    an3: ["*Common*", "Dual Kamas Prime Blueprint", "Paris Prime Upper Limb", "*Uncommon*", "Bronco Prime Barrel", "Volt Prime Blueprint", "*Rare*", "Nekros Prime Blueprint"],
+    nn3: ["*Common*", "Paris Prime String", "Odonata Prime Systems", "Lex Prime Barrel", "*Uncommon*", "Ash Prime Neuroptics", "Fang Prime Handle", "*Rare*", "Nekros Prime Systems"],
+    mf1: ["*Common*", "Saryn Prime Systems", "Paris Prime Lower Limb", "Bronco Prime Receiver", "*Uncommon*", "Dual Kamas Prime Handle", "Nekros Prime Neuroptics", "*Rare*", "Fragor Prime Blueprint"],
+    ln1: ["*Common*", "Fang Prime Blade", "Bronco Prime Blueprint", "Nekros Prime Chassis", "*Uncommon*", "Akbronco Prime Link", "*Rare*", "Nova Prime Chassis"],
+    ag1: ["*Common*", "Paris Prime Blueprint", "Saryn Prime Systems", "Nekros Prime Chassis", "*Uncommon*", "Kavasa Prime Blueprint", "*Rare*", "Galatine Prime Blueprint"],
+    at1: ["*Common*", "Saryn Prime Systems", "Odonata Prime Harness", "Vectis Prime Barrel", "*Uncommon*", "Burston Prime Barrel", "Akstiletto Prime Receiver", "*Rare*", "Tigris Prime Blueprint"],
+    nv3: ["*Common*", "Carrier Prime Systems", "Paris Prime String", "Galatine Prime Blade", "*Uncommon*", "Tigris Prime Receiver", "*Rare*", "Vauban Prime Neuroptics"],
+    ms1: ["*Common*", "Tigris Prime Stock", "Paris Prime Blueprint", "Nova Prime Systems", "*Uncommon*", "Odonata Prime Blueprint", "Paris Prime Upper Limb", "*Rare*", "Soma Prime Stock"],
+    lk1: ["*Common*", "Odonata Prime Harness", "Burston Prime Stock", "Fang Prime Blueprint", "*Uncommon*", "Trinity Prime Blueprint", "Tigris Prime Barrel", "*Rare*", "Kavasa Prime Buckle"],
+    nv2: ["*Common*", "Galatine Prime Blade", "Braton Prime Stock", "Fang Prime Handle", "*Uncommon*", "Galatine Prime Handle", "*Rare*", "Vauban Prime Blueprint"],
+    ms2: ["*Common*", "Galatine Prime Blade", "Bronco Prime Blueprint", "Paris Prime String", "*Uncommon*", "Paris Prime Grip", "*Rare*", "Saryn Prime Chassis"],
     
     //Archwing
     sm: ["Kaszas Handle", "Velocitus Receiver", "Corvas Stock", "Agkuza Guard", "Fluctus Stock"],
