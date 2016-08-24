@@ -219,6 +219,19 @@ var tables = {
     av2: ["*Common*", "Trinity Prime Systems", "Mag Prime Neuroptics", "Hikou Prime Pouch", "*Uncommon*", "Boar Prime Barrel", "Braton Prime Receiver", "*Rare*", "Vectis Prime Stock"],
     av3: ["*Common*", "Trinity Prime Systems", "Trinity Prime Neuroptics", "Vasto Prime Barrel", "*Uncommon*", "Braton Prime Receiver", "Orthos Prime Blueprint", "*Rare*", "Vectis Prime Stock"],
     
+    //New relics, sort later?
+    an3: ["*Common*", "*Uncommon*","*Rare*", "Nekros Prime Blueprint"],
+    nn3: ["*Common*", "*Uncommon*","*Rare*", "Nekros Prime Systems"],
+    mf1: ["*Common*", "*Uncommon*", "Nekros Prime Neuroptics", "*Rare*", ],
+    ln1: ["*Common*", "Nekros Prime Chassis", "*Uncommon*", "*Rare*", ],
+    ag1: ["*Common*", "Nekros Prime Chassis", "*Uncommon*", "*Rare*", "Galatine Prime Blueprint"],
+    at1: ["*Common*", "*Uncommon*", "*Rare*", "Tigris Prime Blueprint"],
+    nv3: ["*Common*", "Galatine Prime Blade", "*Uncommon*", "Tigris Prime Receiver", "*Rare*", ],
+    ms1: ["*Common*", "Tigris Prime Stock", "*Uncommon*", "*Rare*", ],
+    lk1: ["*Common*", "*Uncommon*", "Tigris Prime Barrel", "*Rare*", ],
+    nv2: ["*Common*", "Galatine Prime Blade", "*Uncommon*", "Galatine Prime Handle", "*Rare*", ],
+    ms2: ["*Common*", "Galatine Prime Blade", "*Uncommon*", "*Rare*", ],
+    
     //Archwing
     sm: ["Kaszas Handle", "Velocitus Receiver", "Corvas Stock", "Agkuza Guard", "Fluctus Stock"],
     aoh: ["Dual Decurion Barrel", "Phaedra Barrel", "Corvas Barrel", "Cyngas Barrel", "Centaur Aegis"],
