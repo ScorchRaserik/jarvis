@@ -194,6 +194,9 @@ function determineInput(input){
         case "ms2":
             output = "ms2";
             break;
+        case "lith c1":
+        case "lc1":
+            output = "lc1";
             
         //Archwing
         case "steel meridian":
@@ -277,6 +280,7 @@ var tables = {
     lk1: ["*Common*", "Odonata Prime Harness", "Burston Prime Stock", "Fang Prime Blueprint", "*Uncommon*", "Trinity Prime Blueprint", "Tigris Prime Barrel", "*Rare*", "Kavasa Prime Buckle"],
     nv2: ["*Common*", "Galatine Prime Blade", "Braton Prime Stock", "Fang Prime Handle", "*Uncommon*", "Galatine Prime Handle", "*Rare*", "Vauban Prime Blueprint"],
     ms2: ["*Common*", "Galatine Prime Blade", "Bronco Prime Blueprint", "Paris Prime String", "*Uncommon*", "Paris Prime Grip", "*Rare*", "Saryn Prime Chassis"],
+    lc1: ["*Common*", "Nova Prime Systems", "Fang Prime Blade", "Nova Prime Neuroptics", "*Uncommon*", "Kavasa Prime Band", "*Rare*", "Carrier Prime Cerebrum"],
     
     //Archwing
     sm: ["Kaszas Handle", "Velocitus Receiver", "Corvas Stock", "Agkuza Guard", "Fluctus Stock"],
