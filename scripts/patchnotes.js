@@ -50,6 +50,7 @@ module.exports = function(robot) {
                 msg.send(text);
             }
             else{
+                console.log("made it");
                 jsdom.env(
                     text,
                     ["http://code.jquery.com/jquery.js"],
@@ -59,8 +60,19 @@ module.exports = function(robot) {
                             var lineStart = "";
                             var lineEnd = "";
                             var style = window.$("span")[i].getAttribute("style");
-                            font = style.split("font-weight:")[1].split(";")[0];
-                            if(font == "700" || font == "blod"){
+                            if(style != undefined){
+                                fontsplit = style.split("font-weight:")[1];
+                            }
+                            else{
+                                fontsplit = "";
+                            }
+                            if(fontsplit != undefined){
+                                font = fontsplit.split(";")[0];
+                            }
+                            else{
+                                font = 0;
+                            }
+                            if(font == "700" || font == "bold"){
                                 lineStart = "\n**";
                                 lineEnd = "**\n";
                             }
@@ -68,7 +80,7 @@ module.exports = function(robot) {
                                 lineStart = "* ";
                                 lineEnd = "\n";
                             }
-                            output += lineStart + window.$("span")[i].innerHTML + lineEnd
+                            output += lineStart + window.$("span")[i].innerHTML + lineEnd;
                         }
                         msg.send(output);
                     }
